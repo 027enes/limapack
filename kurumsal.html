@@ -1,0 +1,530 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="assets/css/output.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <script src="//unpkg.com/alpinejs" defer></script>
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="relative" :class="{ 'overflow-hidden': isOpen }" x-data="{ isOpen: false, popUps: Array(10).fill(false) }" x-cloak>
+  <header class="bg-limapack" >
+
+        <!--Header Top-->
+        <div class="py-4 border-b border-limapack-light md:block hidden">
+          <div class="flex justify-between items-center container">
+            <ul class="flex items-center gap-4">
+              <li>
+                <a href="#" class="text-white font-[200] font-montserrat text-sm hover:underline ">
+                  Üretim Teknolojilerimiz
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-white font-[200] font-montserrat text-sm hover:underline ">
+                  Çevre Bilincimiz
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-white font-[200] font-montserrat text-sm hover:underline ">
+                  Sosyal Sorumluluk Projelerimiz
+                </a>
+              </li>
+              
+            </ul>
+          <div class="flex justify-end">
+            <a href="#" class="text-white font-medium font-montserrat text-sm hover:underline ">
+              Dağıtım Ağımızı Keşfet
+            </a>
+          </div>
+        </div>
+
+        </div>
+
+        <!--Header Bottom-->
+        <div class="relative flex justify-between items-center py-6 container">
+          <div class="flex items-center gap-4">
+            <img src="assets/images/logo.png" alt="logo" class="h-6 md:h-8">
+          </div>
+          <nav class="md:visible md:opacity-100 transition-all duration-300 z-20"
+            :class="isOpen ? 'visible opacity-100' : 'invisible opacity-0 md:visible md:opacity-100'">
+            <ul class="flex md:items-center items-start md:flex-row flex-col md:bg-transparent md:gap-8 md:relative fixed md:top-0 top-[96px] left-0 w-full h-[calc(100vh-96px)] md:h-auto md:justify-center justify-start md:p-0 py-8 bg-limapack md:border-t-0 border-t border-limapack-light transition-transform duration-300"
+                :class="isOpen ? 'translate-x-0' : 'translate-x-full md:translate-x-0'">
+              <li class="md:border-b-0 border-b border-white w-full md:p-0 p-4" >
+                <a href="#" class="text-white font-semibold font-montserrat text-base hover:text-limapack-light transition-all duration-300 ">
+                  Anasayfa
+                </a>
+              </li>
+              <li class="md:border-b-0 border-b border-white w-full md:p-0 p-4">
+                <a href="#" class="text-white font-semibold font-montserrat text-base hover:text-limapack-light transition-all duration-300 ">
+                  Hakkımızda
+                </a>
+              </li>
+              <li class="md:border-b-0 border-b border-white w-full md:p-0 p-4">
+                <a href="#" class="text-white font-semibold font-montserrat text-base hover:text-limapack-light transition-all duration-300 ">
+                  Kurumsal
+                </a>
+              </li>
+              <li class="md:border-b-0 border-b border-white w-full md:p-0 p-4">
+                <a href="#" class="text-white font-semibold font-montserrat text-base hover:text-limapack-light transition-all duration-300 ">
+                  Ürünler
+                </a>
+              </li>
+              <li class="w-full md:p-0 p-4">
+                <a href="#" class="text-white font-semibold font-montserrat text-base hover:text-limapack-light transition-all duration-300 ">
+                  İletişim
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+          <div class="md:hidden block w-12 h-12 rounded-full bg-white border-black border-[1px] ">
+            <button class="relative w-full h-full flex flex-col items-center justify-center gap-1" @click="isOpen = !isOpen">
+              <div class="flex items-center justify-center gap-1">
+                <span class="flex items-center justify-center w-1.5 h-1.5 bg-black rounded-full"></span>
+                <span class="flex items-center justify-center w-1.5 h-1.5 bg-black rounded-full"></span>
+              </div>
+              <div class="flex items-center justify-center gap-1">
+                <span class="flex items-center justify-center w-1.5 h-1.5 bg-black rounded-full"></span>
+                <span class="flex items-center justify-center w-1.5 h-1.5 bg-black rounded-full"></span>
+              </div>
+            </button>
+          </div>
+
+        <div class="md:hidden flex h-14 w-14 rounded-full bg-limapack border-2 border-white items-center justify-center absolute right-1/2 translate-x-1/2 z-20 top-[70px]" :class="isOpen ? 'hidden' : ''">
+          <i class="fa-solid fa-arrow-down text-white  text-2xl"></i>
+        </div>
+
+        </div>
+
+      
+  </header>
+
+
+    <section class="relative bg-no-repeat bg-center md:h-[400px] h-[300px] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-limapack after:opacity-40 after:z-10" style="background-image: url('assets/images/urunler-bg.png');"></section>
+
+    <section class="relative py-10 border-b border-limapack-light">
+        <div class="container">
+            <div class="flex md:flex-row flex-col items-start justify-between gap-4">
+                <div class="md:flex-1/2 w-full text-center">
+                    <h2 class="text-black font-satoshi font-medium md:text-4xl text-2xl md:w-2/3 md:text-left text-center">
+                        Hedefimiz gelecek nesiller
+                    </h2>
+                </div>
+                <div class="md:flex-1/2 flex gap-28 justify-between items-center">
+                    <p class="text-black md:leading-8 font-satoshi font-normal md:text-lg text-base md:max-w-md md:text-left text-center">
+                        Ürünlerimizin, girdilerimizin ve faaliyetlerimizin çevresel etkilerini en aza indirerek kalitesini 
+                    </p>
+                    <div class=" flex-row items-center justify-center gap-4 border border-limapack-light min-w-16 min-h-16 rounded-full md:flex hidden" >
+                        <i class="fa-solid fa-arrow-down text-limapack text-2xl" id="arrow-down"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-16 border-b bg-[#180035]">
+        <div class="container">
+            <div class="flex flex-col items-center justify-center gap-4">
+                <div class="relative w-full lg:w-3/4 mx-auto">
+                    <div class="h-96 w-full overflow-hidden">
+                        <img src="assets/images/video-resim.png" alt="Kurumsal" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute bottom-0 right-0 w-full h-full flex items-end justify-end">
+                        <div class="md:min-h-44 min-h-28 bg-[#E1D0C1] flex flex-col gap-4 md:max-w-md w-full px-8 py-10 justify-between">
+                            <h2 class="text-black font-playfair-display font-medium md:text-3xl text-2xl md:max-w-3/4">Üretim teknolojimizi keşfet!</h2>
+                            <a href="#" class="flex group justify-between items-center">
+                                <p class="text-black font-satoshi font-normal md:text-base text-sm underline">TANITIM FİLMİMİZİ İZLE</p>
+                                <div class="flex min-h-12 min-w-12 rounded-full bg-white items-center justify-center group-hover:bg-limapack-light transition-all duration-300">
+                                    <i class="fa-solid fa-play text-black text-xl group-hover:text-white transition-all duration-300"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative md:mt-0 mt-6">
+                    <h2 class="text-white font-satoshi font-medium md:text-6xl text-3xl lg:max-w-2/4 max-w-full mx-auto text-center">
+                            Gelecek için temiz çevre bırakmak,
+                         <span class="relative text-white  after:absolute after:top-3 after:-rotate-1 after:w-[calc(100%+50px)] after:-left-3 after:h-full after:bg-white after:z-10 md:after:block after:hidden">
+                            <span class="relative z-20 md:text-black !text-white">önceliğimiz!</span>
+                        </span>
+                    </h2>
+                    <p class="text-white font-satoshi font-normal md:text-lg text-sm lg:max-w-2/4 max-w-full mx-auto text-center md:mt-12 mt-6">
+                        2024 yılında kurulan Limapack Plastik, yenilikçi ve çevre dostu plastik ambalaj çözümleri sunarak sektörde fark yaratmayı hedefleyen bir firmadır. Kaliteli üretim anlayışı ve müşteri odaklı hizmet yaklaşımı ile Türkiye ve uluslararası pazarda güçlü bir yer edinmeyi amaçlamaktadır. Gelişmiş üretim teknolojileri ve sürdürülebilirlik ilkesi doğrultusunda hareket eden Limapack Plastik, çevreye duyarlı ve geri dönüştürülebilir ürünler geliştirmeye öncelik vermektedir.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+<section class="relative py-16">
+    <div class="container">
+        <div class="flex flex-col gap-16">
+            <!-- Misyonumuz -->
+            <div class="flex flex-col gap-6">
+                <h2 class="text-center font-outfit font-medium md:text-6xl text-4xl">"Misyonumuz"</h2>
+                <p class="text-center font-satoshi md:text-lg text-sm leading-relaxed max-w-4xl mx-auto">
+                    Müşterilerimize yüksek kalite standartlarında dayanıklı ve çevre dostu plastik ambalaj çözümleri sunarak önlerin iş süreçlerine değer katmak. Sürdürülebilirlik ilkelerini benimseyerek, doğaya saygılı ve geri dönüştürülebilir malzemelerle üretim yaparak sektörün geleceğine katkıda bulunmak.
+                </p>
+            </div>
+
+            <!-- Vizyonumuz -->
+            <div class="flex flex-col gap-6">
+                <h2 class="text-center font-outfit font-medium md:text-6xl text-4xl">"Vizyonumuz"</h2>
+                <p class="text-center font-satoshi md:text-lg text-sm leading-relaxed max-w-4xl mx-auto">
+                    Sektörde öncü ve yenilikçi bir marka olarak, uluslararası pazarda rekabet gücümüzü arttırmak sürdürülebilir ve kaliteli ambalaj çözümleri sunan lider bir firma olmak. Müşteri memnuniyetini en üst düzeyde tutarak, global standartlara uygun üretim süreçleriyle değerler üretmeyi hedefine gelmek.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="relative py-16 bg-no-repeat bg-cover bg-center md:h-[1200px] h-[600px]" style="background-image: url('assets/images/değerlerimiz.png');">
+    <div class="container h-full">
+        <div class="custom-values-slider h-full">
+            <div class="slides-container h-full">
+                <div class="slide flex flex-col h-full items-end justify-center relative" data-index="0">
+                    <div class=" w-full md:text-right text-center">
+                        <h2 class="text-transparent font-satoshi font-bold md:text-6xl text-4xl mb-6 outline-text">DEĞERLERİMİZ</h2>
+                    </div>
+                    <div class="flex flex-col items-center justify-center  relative z-10">
+                        <div class="bg-purple-100 rounded-full w-64 h-64 absolute opacity-50 -z-10"></div>
+                        <div class="flex flex-col items-end md:max-w-4xl w-full">
+                            <h2 class="text-black font-outfit font-normal md:text-5xl text-2xl mb-6 md:text-right text-center">"Kalite: Ürünlerimizde en yüksek kalite standartlarını koruyarak müşteri memnuniyetini sağlamak."</h2>
+                            <div class="flex items-center md:justify-end justify-center md:gap-52  w-full mt-16">
+                                <div class=" items-center justify-center relative md:flex hidden">
+                                    <span class="h-0.5 w-42 bg-black absolute left-[-90%] translate-x-[-90%] "></span>
+                                    <span class="slide-number text-black font-medium text-xl ">01</span>
+                                    <span class="mx-2">/</span>
+                                    <span class="total-slides text-gray-400 font-medium text-xl">03</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <button class="prev-button w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                    </button>
+                                    <button class="next-button w-12 h-12 rounded-full bg-purple-200 flex items-center justify-center">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <template x-for=" i in 4" :key="i">
+                <div class="slide flex flex-col h-full items-end justify-center relative" data-index="0">
+                    <div class=" w-full text-right">
+                        <h2 class="text-transparent font-satoshi font-bold text-6xl mb-6 outline-text">DEĞERLERİMİZ</h2>
+                    </div>
+                    <div class="flex flex-col items-center justify-center  relative z-10">
+                        <div class="bg-purple-100 rounded-full w-64 h-64 absolute opacity-50 -z-10"></div>
+                        <div class="flex flex-col items-end max-w-4xl w-full">
+                            <h2 class="text-black font-outfit font-normal text-5xl mb-6 text-right">"Kalite: Ürünlerimizde en yüksek kalite standartlarını koruyarak müşteri memnuniyetini sağlamak."</h2>
+                            <div class="flex items-center justify-end w-full mt-16">
+                                <div class="flex items-center">
+                                    <span class="slide-number text-black font-medium text-xl">01</span>
+                                    <span class="mx-2">/</span>
+                                    <span class="total-slides text-gray-400 font-medium text-xl">03</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <button class="prev-button w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                    </button>
+                                    <button class="next-button w-12 h-12 rounded-full bg-purple-200 flex items-center justify-center">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </template>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+    <section class="relative py-32 md:block hidden">
+        <div class="container">
+          <div class="flex flex-row items-center justify-center gap-14">
+            <div class="relative flex items-center gap-2 z-20 ">
+              <div class="flex items-center gap-2 flex-1">
+                <img src="assets/images/slider-text.svg" alt="Slider Yazı" class="!min-w-32 !min-h-32 slider-text-rotate">
+                <span class="text-limapack font-montserrat font-normal text-6xl absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
+                  #1</span>
+                </span>
+              </div>
+            </div>
+    
+            <div class="flex flex-col items-start gap-4 ">
+              <span class="text-black/40 italic font-satoshi font-light text-2xl">
+                KURUMSAL SORUMLULUKLARIMIZ
+              </span>
+              <h2 class="text-limapack font-bebas-neue font-medium text-6xl xl:leading-7 ">
+                ÇEVREDEN KAZANDIKLARIMIZ YENİDEN ÇEVREYE
+              </h2>
+              <a href="#" class="text-[#9A9A9A] font-montserrat font-medium text-xl flex items-center justify-end gap-2 w-full">
+                ÇEVRE BİLİNCİMİZİ KEŞFET
+                <i class="fa-solid fa-arrow-right -rotate-45"></i>
+              </a>
+            </div>
+        </div>
+      </section>
+      
+      <section class="relative py-32 h-[500px] bg-no-repeat bg-top bg-cover desktop-bg" style="background-image: url('assets/images/footer-bg.png');">
+        <div class="md:hidden block absolute bottom-0 left-0 w-full h-full">
+          <img src="assets/images/footer-bg-mobile.png" alt="Footer Background" class="w-full h-full object-contain object-bottom">
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t md:from-limapack/80 from-limapack/50  to-transparent"></div>
+        <div class="container h-full md:block hidden">
+          <div class="flex items-end  h-full gap-14 relative z-20">
+            <div class="flex md:flex-row flex-col items-start justify-between gap-4 w-full">
+              <div class="md:flex-1/2">
+                <h2 class="text-white font-satoshi font-bold text-5xl w-1/2">Yeniliklerden ilk sen haberdar ol.</h2>
+              </div>
+    
+              <div class="md:flex-1/2 border border-white flex bg-limapack lg:p-14 p-6">
+                <form action="" class="flex flex-col gap-4 w-full ">
+                 <div class="flex flex-col items-start w-full gap-4">
+                  <div class="flex flex-row justify-between gap-6 w-full">
+                    <input type="email" placeholder="Mail Adresini" class="w-full bg-transparent border-b border-white text-white font-satoshi font-light text-base pb-2  placeholder:text-white focus:outline-none">
+                    <button type="submit" class="bg-white text-black font-satoshi font-medium text-base px-8 py-4 tracking-widest cursor-pointer hover:bg-limapack-light transition-all duration-300 hover:text-w">GÖNDER</button>
+                  </div>
+                  <span class="text-white/50 font-satoshi font-light text-sm">Bültenimize katılmak istermisiniz?</span>
+                 </div>
+                </form>
+              </div>
+                                                                       
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <footer class="bg-black text-white py-24">
+        <div class="container grid md:grid-cols-3 grid-cols-1 md:gap-10 gap-16 md:justify-between justify-center md:items-start items-center">
+          <div class="flex flex-col  col-span-1">
+            <div class="md:block flex justify-center">
+              <img src="assets/images/logo.png" alt="LimaPack Logo" class="h-8 mb-8">
+            </div> 
+            <p class="text-white/80 font-satoshi font-light md:text-lg text-sm md:text-left text-center">
+              Saray Mh. Saraykent Sk. Saraykent 11,<br>
+              Merkez Köyü<br>
+              Kahramankazan / ANKARA / TÜRKİYE
+            </p>
+          </div>
+          <div class="flex-col items-center gap-10 col-span-1 md:flex hidden">
+            <div class="flex gap-2 ">
+              <a href="#" class="text-white w-12 h-12 border border-white/30 rounded-full flex items-center justify-center hover:bg-white/10 hover:text-white transition-all duration-300 text-xl"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#" class="text-white w-12 h-12 border border-white/30 rounded-full flex items-center justify-center hover:bg-white/10 hover:text-white transition-all duration-300 text-xl"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="text-white w-12 h-12 border border-white/30 rounded-full flex items-center justify-center hover:bg-white/10 hover:text-white transition-all duration-300 text-xl"><i class="fa-brands fa-behance"></i></a>
+              <a href="#" class="text-white w-12 h-12 border border-white/30 rounded-full flex items-center justify-center hover:bg-white/10 hover:text-white transition-all duration-300 text-xl"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <p class="text-white font-satoshi font-light md:text-lg text-sm md:block hidden">©2025. <span class="text-white/50">All Rights Reserved. Design by</span> <a href="#" class="text-white hover:underline">Teknografi DMÇ</a></p>
+          </div>
+          <div class="md:text-right text-center flex flex-col md:items-end items-center col-span-1">
+            <ul class="flex gap-4 mt-2 flex-col md:items-start items-center">
+              <li><a href="#" class="text-white/40 hover:text-white">Ana Sayfa</a></li>
+              <li><a href="#" class="text-white/40 hover:text-white">Kurumsal</a></li>
+              <li><a href="#" class="text-white/40 hover:text-white">Ürünlerimiz</a></li>
+              <li><a href="#" class="text-white/40 hover:text-white">İletişim</a></li>
+            </ul>
+          </div>
+          <p class="text-white font-satoshi font-light md:text-lg text-sm md:hidden block text-center ">©2025. <span class="text-white/50">All Rights Reserved. Design by</span> <a href="#" class="text-white hover:underline">Teknografi DMÇ</a></p>
+    
+        </div>
+      </footer>
+    
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    
+      <script>
+            var swiper = new Swiper(".homeSlider", {
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+              loop: true,
+              autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+              },
+              on: {
+                init: function() {
+                  this.emit('slideChange');
+                },
+                slideChange: function () {
+                  const currentSlide = this.realIndex + 1;
+                  const currentElements = document.querySelectorAll('.current-slide');
+                  currentElements.forEach(el => {
+                    el.textContent = currentSlide < 10 ? `0${currentSlide}` : currentSlide;
+                  });
+                  
+                  const slideNumberElements = document.querySelectorAll('.current-slide-number');
+                  slideNumberElements.forEach(el => {
+                    el.textContent = currentSlide;
+                  });
+                }
+              }
+        });
+    
+        const swiperOptions = {
+          slidesPerView: 1.5,
+          spaceBetween: 20,
+          observer: true,
+          observeParents: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          breakpoints: {
+            640: {
+              slidesPerView: 1.5,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2.5,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3.5,
+              spaceBetween: 40,
+            },
+          },
+        };
+    
+        const productSliders = document.querySelectorAll('.productSlider');
+        productSliders.forEach(slider => {
+          new Swiper(slider, swiperOptions);
+        });
+    
+        const sliderText = document.querySelectorAll('.slider-text-rotate');
+        const sliderTextRotate = gsap.to(sliderText, {
+          rotate: 360,
+          duration: 14,
+          repeat: -1,
+          ease: 'linear'
+        });
+    
+        const starIcon = document.getElementById('star-icon');
+        const starIconRotate = gsap.to(starIcon, {
+          rotate: 360,
+          duration: 14,
+          repeat: -1,
+          ease: 'linear'
+        });
+    
+        const sliderKaydirma = document.querySelectorAll('.slider-kaydirma');
+        const sliderKaydirmaRotate = gsap.to(sliderKaydirma, {
+          x: 10,
+          yoyo: true, 
+          duration: 1.5,
+          repeat: -1,
+          ease: 'power1.inOut'
+        });
+    
+        const arrowDown = document.getElementById('arrow-down');
+        const arrowDownY = gsap.to(arrowDown, {
+          y: 8,
+          yoyo: true,
+          duration: 1.5,
+          repeat: -1,
+          ease: 'power1.inOut'
+        });
+
+        var swiper = new Swiper('.swiper-container', {
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.custom-values-slider .slide');
+            const nextButtons = document.querySelectorAll('.custom-values-slider .next-button');
+            const prevButtons = document.querySelectorAll('.custom-values-slider .prev-button');
+            const totalSlides = slides.length;
+            let currentSlide = 0;
+            
+            function updateSlideNumbers() {
+                document.querySelectorAll('.total-slides').forEach(el => {
+                    el.textContent = totalSlides < 10 ? `0${totalSlides}` : totalSlides;
+                });
+                
+                document.querySelectorAll('.slide-number').forEach((el, index) => {
+                    const slideIndex = parseInt(el.closest('.slide').dataset.index) + 1;
+                    el.textContent = slideIndex < 10 ? `0${slideIndex}` : slideIndex;
+                });
+            }
+            
+            function showSlide(index) {
+                slides.forEach(slide => {
+                    slide.classList.add('hidden');
+                    slide.style.opacity = 0;
+                });
+                
+                slides[index].classList.remove('hidden');
+                setTimeout(() => {
+                    slides[index].style.transition = 'opacity 0.8s ease';
+                    slides[index].style.opacity = 1;
+                }, 50);
+                
+                currentSlide = index;
+                
+                const activeSlideNumber = document.querySelector('.slide:not(.hidden) .slide-number');
+                if (activeSlideNumber) {
+                    activeSlideNumber.textContent = (currentSlide + 1) < 10 ? `0${currentSlide + 1}` : (currentSlide + 1);
+                }
+            }
+            
+            updateSlideNumbers();
+            showSlide(0);
+            
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const nextSlide = (currentSlide + 1) % totalSlides;
+                    showSlide(nextSlide);
+                });
+            });
+            
+            prevButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                    showSlide(prevSlide);
+                });
+            });
+        });
+      </script>
+    </body>
+    </html>
